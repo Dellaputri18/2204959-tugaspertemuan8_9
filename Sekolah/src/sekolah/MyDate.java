@@ -2,58 +2,58 @@ package sekolah;
 
 // Kelas MyDate (untuk representasi tanggal)
 class MyDate {
-    private int year;
-    private int month;
-    private int day;
+    private int tahun;
+    private int bulan;
+    private int hari;
     
-    public MyDate(int year, int month, int day) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
+    public MyDate(int tahun, int bulan, int hari) {
+        this.tahun = tahun;
+        this.bulan = bulan;
+        this.hari = hari;
     }
     
     public int getYear() {
-        return year;
+        return tahun;
     }
     
     public int getMonth() {
-        return month;
+        return bulan;
     }
     
     public int getDay() {
-        return day;
+        return hari;
     }
     
     @Override
     public String toString() {
-        return year + "-" + month + "-" + day;
+        return tahun + "-" + bulan + "-" + hari;
     }
 }
 
 // Kelas Person (Superclass)
 class Person {
-    private String name;
-    private String address;
-    private String phoneNumber;
+    private String nama;
+    private String alamat;
+    private String telepon;
     private String email;
     
-    public Person(String name, String address, String phoneNumber, String email) {
-        this.name = name;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+    public Person(String nama, String alamat, String telepon, String email) {
+        this.nama = nama;
+        this.alamat = alamat;
+        this.telepon = telepon;
         this.email = email;
     }
     
     public String getName() {
-        return name;
+        return nama;
     }
     
     public String getAddress() {
-        return address;
+        return alamat;
     }
     
     public String getPhoneNumber() {
-        return phoneNumber;
+        return telepon;
     }
     
     public String getEmail() {
@@ -62,26 +62,26 @@ class Person {
     
     @Override
     public String toString() {
-        return "Person: " + name;
+        return "Person: " + nama;
     }
 }
 
 // Kelas Student (Subclass dari Person)
 class Student extends Person {
-    public static final String FRESHMAN = "Freshman";
-    public static final String SOPHOMORE = "Sophomore";
+    public static final String MB1 = "Mahasiswa Baru";
+    public static final String MB2 = "Mahasiswa Baru tahun kedua";
     public static final String JUNIOR = "Junior";
     public static final String SENIOR = "Senior";
     
-    private String classStatus;
+    private String status;
     
-    public Student(String name, String address, String phoneNumber, String email, String classStatus) {
-        super(name, address, phoneNumber, email);
-        this.classStatus = classStatus;
+    public Student(String nama, String alamat, String telepon, String email, String status) {
+        super(nama, alamat, telepon, email);
+        this.status = status;
     }
     
     public String getClassStatus() {
-        return classStatus;
+        return status;
     }
     
     @Override
@@ -96,8 +96,8 @@ class Employee extends Person {
     private double salary;
     private MyDate dateHired;
     
-    public Employee(String name, String address, String phoneNumber, String email, String office, double salary, MyDate dateHired) {
-        super(name, address, phoneNumber, email);
+    public Employee(String nama, String alamat, String telepon, String email, String office, double salary, MyDate dateHired) {
+        super(nama, alamat, telepon, email);
         this.office = office;
         this.salary = salary;
         this.dateHired = dateHired;
@@ -126,8 +126,8 @@ class Faculty extends Employee {
     private String officeHours;
     private String rank;
     
-    public Faculty(String name, String address, String phoneNumber, String email, String office, double salary, MyDate dateHired, String officeHours, String rank) {
-        super(name, address, phoneNumber, email, office, salary, dateHired);
+    public Faculty(String nama, String alamat, String telepon, String email, String office, double salary, MyDate dateHired, String officeHours, String rank) {
+        super(nama, alamat, telepon, email, office, salary, dateHired);
         this.officeHours = officeHours;
         this.rank = rank;
     }
@@ -150,8 +150,8 @@ class Faculty extends Employee {
 class Staff extends Employee {
     private String title;
     
-    public Staff(String name, String address, String phoneNumber, String email, String office, double salary, MyDate dateHired, String title) {
-        super(name, address, phoneNumber, email, office, salary, dateHired);
+    public Staff(String nama, String alamat, String telepon, String email, String office, double salary, MyDate dateHired, String title) {
+        super(nama, alamat, telepon, email, office, salary, dateHired);
         this.title = title;
     }
     
